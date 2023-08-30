@@ -53,6 +53,7 @@ class SearchedNewsFragment: Fragment(R.layout.fragment_search_news) {
 
         setUpRecyclerView()
 
+
         binding.etSearch.addTextChangedListener { searchedQuery ->
             searchJob?.cancel()
             searchJob = MainScope().launch {
