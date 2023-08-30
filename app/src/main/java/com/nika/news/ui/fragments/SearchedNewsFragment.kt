@@ -45,14 +45,14 @@ class SearchedNewsFragment: Fragment(R.layout.fragment_search_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        val x= "szia norbi"
         val articleDataBase=ArticleDataBase.getInstance(requireContext())
         val newsRepository=NewsRepository(articleDataBase)
         val viewModelFactory=NewsViewModelFactory(newsRepository)
         viewModel= ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
 
-        Log.d("/////", "onViewCreated: vm activit = ${(activity as NewsActivity)} ")
         setUpRecyclerView()
+
 
         binding.etSearch.addTextChangedListener { searchedQuery ->
             searchJob?.cancel()
