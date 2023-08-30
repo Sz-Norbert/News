@@ -51,7 +51,6 @@ class SearchedNewsFragment: Fragment(R.layout.fragment_search_news) {
         val viewModelFactory=NewsViewModelFactory(newsRepository)
         viewModel= ViewModelProvider(this, viewModelFactory)[NewsViewModel::class.java]
 
-        Log.d("/////", "onViewCreated: vm activit = ${(activity as NewsActivity)} ")
         setUpRecyclerView()
 
         binding.etSearch.addTextChangedListener { searchedQuery ->
